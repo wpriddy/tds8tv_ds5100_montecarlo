@@ -1,0 +1,17 @@
+test_analyzer_combo_counts (__main__.montecarlo_test_suite) ... ok
+test_analyzer_face_counts_per_roll (__main__.montecarlo_test_suite) ... ok
+test_analyzer_initializer (__main__.montecarlo_test_suite) ... ok
+test_analyzer_jackpot (__main__.montecarlo_test_suite) ... ok
+test_analyzer_permutation_counts (__main__.montecarlo_test_suite) ... ok
+test_die_change_side_weight (__main__.montecarlo_test_suite) ... ok
+test_die_initializer (__main__.montecarlo_test_suite) ... ok
+test_die_roll_output (__main__.montecarlo_test_suite) ... ok
+test_die_show_the_dice (__main__.montecarlo_test_suite) ... ok
+test_game_initializer (__main__.montecarlo_test_suite) ... ok
+test_game_play (__main__.montecarlo_test_suite) ... ok
+test_game_results_narrow (__main__.montecarlo_test_suite) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.028s
+
+OK
