@@ -4,7 +4,7 @@ from random import randint
 from collections import Counter
 
 class die:
-    """Die Class
+    """Die Class --TODO DELETE
     
     Creates and allows modification of a Die with N faces and W weights
     
@@ -70,7 +70,8 @@ class die:
         
         # Roll die each time
         for roll in range(rolls):
-            results.append(self._parameters.iloc[randint(0, self._parameters.shape[1]-1)])
+            results.append(self._parameters.iloc[randint(0, self._parameters.shape[0]-1)])
+            print(randint(0, self._parameters.shape[0]-1))
         
         # return list
         return results
@@ -260,5 +261,5 @@ class analyzer:
         self.permutation_results = self.game.game_results.groupby(by=[i for i in self.game.game_results.columns if 'count' != i]).agg({'count': 'sum'})   
         
         return self.permutation_results
-        
-        
+  
+
