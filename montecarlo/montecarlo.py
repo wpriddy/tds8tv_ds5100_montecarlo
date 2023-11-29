@@ -1,12 +1,11 @@
 import numpy as np
 import pandas as pd
-from random import randint
 from collections import Counter
 
 class die:
-    """Die Class --TODO DELETE
+    """Die Class
     
-    Creates and allows modification of a Die with N faces and W weights
+    Creates and allows modification of a Die with N faces and corresponding W weight
     
     """
     def __init__(self, faces: np.array):
@@ -18,9 +17,7 @@ class die:
         # Check that faces are numpy array
         if not isinstance(faces, np.ndarray):
             raise TypeError(f'Faces must be numpy array not {type(faces)}')
-            
-        #TODO potentiall type check contents of array
-        
+                    
         # Check that all sides are unique
         if len(faces) != len(set(faces)):
             # if not raise value error
@@ -28,6 +25,7 @@ class die:
         
         # Create private dataframe
         self._parameters = pd.DataFrame({'face': faces})
+
         # Assign weights = 1
         self._parameters['weights'] = 1.0
 
@@ -43,7 +41,7 @@ class die:
         if face not in self._parameters.face.unique():
             raise IndexError(f'Invalid Face name "{face}"')
         
-        # Check that weight is correct value before updating
+        # Check that weight is correct type before updating
         try:
             float(weight)
         except ValueError:
@@ -70,8 +68,8 @@ class die:
         
         # Roll die each time
         for roll in range(rolls):
-            results.append(self._parameters.iloc[randint(0, self._parameters.shape[0]-1)])
-            print(randint(0, self._parameters.shape[0]-1))
+            # Sample DataFrame for Dice Roll
+            results.append(self._parameters.sample(n=1, replace=True, weights='weights').squeeze())
         
         # return list
         return results
@@ -212,7 +210,7 @@ class analyzer:
             face_counts.append(dict(self.game.game_results.iloc[index].value_counts()))
             
         # Creates dataframe of results
-        self.face_counts = pd.DataFrame(face_counts)
+        self.face_counts = pd.DataFrame(face_counts).fillna(0)
     
         return self.face_counts
         
@@ -261,5 +259,6 @@ class analyzer:
         self.permutation_results = self.game.game_results.groupby(by=[i for i in self.game.game_results.columns if 'count' != i]).agg({'count': 'sum'})   
         
         return self.permutation_results
-  
+
+
 

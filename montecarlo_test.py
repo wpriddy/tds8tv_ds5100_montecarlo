@@ -13,7 +13,7 @@ test_game = game([test_die, test_die])
 test_analyzer = analyzer(test_game.play(10))
 
 class montecarlo_test_suite(unittest.TestCase):
-    
+
     def test_die_initializer(self):
         # Test that initializing die class creates private pd.DataFrame
         self.assertEqual(type(test_die._parameters), pd.DataFrame)
