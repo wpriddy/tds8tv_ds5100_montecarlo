@@ -125,13 +125,13 @@ Analyzer Class
            Initializes Analyzer Object For Specific Game
        
            Returns self
-
+    --------------------------------------------------------
       combo_counts()
            Computes the distinct combinations of faces rolled, along with their
            counts.
            
            Returns a data frame of results.
-       
+    --------------------------------------------------------  
       face_counts_per_roll()
            Computes how many times a given face is rolled in each event.
            
@@ -140,13 +140,13 @@ Analyzer Class
            for the other faces.
            
            Returns a data frame of results.
-       
+    --------------------------------------------------------  
       jackpot()
            Analyzes results to see number of times 'jackpot', or all faces being the same for rolled dices,
            happens within a specific game
 
            Returns int 
-       
+    --------------------------------------------------------  
       permutation_counts()
            Computes the distinct permutations of faces rolled, along with their
            counts.
