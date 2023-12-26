@@ -6,7 +6,7 @@
 ### Installation
 
 ```{cmd}
-# Clone the Code from the GitHub Repository
+# Clone the code from the GitHub Repository
 >>> git clone https://github.com/wpriddy/tds8tv_ds5100_montecarlo.git
 
 # Change Directory into parent directory
